@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <script src="./form.js"></script>
+    <style>
+        body {
+            text-align: justify;
+            font-family: sans-serif;
+            font-size: 14px;
+            line-height: 24px;
+            color: #333;
+            background-color: #fff;
+            margin: 0;
+            padding: 0;
+            font-weight: 400;
+        }
+
+        #sec {
+            display: none;
+        }
+    </style>
+
+</head>
+
+<body>
+    <form action="" onsubmit="submit1()">
+        Product Id <input type="number" id="id"><br>
+        Product Name<input type="name" id="productName"><br>
+        Product Price <input type="number" id="productPrice"><br>
+        Product Quantity <input type="number" id="productQuantity"><br>
+        Image <input type="text" id="img1"><br>
+        <button type="submit" id="first">Submit</button>
+        <button type="button" onclick="update()" id="sec">Update</button>
+
+    </form>
+    <br>
+    <br>
+
+    <p id="demo"></p>
+</body>
+
+</html>

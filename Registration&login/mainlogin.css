@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #F7E5E5;
+    width: 100%;
+    height: 100vh;
+    font-family: 'CaviarDreams';
+}
+
+.loginBox {
+    position: absolute;
+    height: 90vh;
+    width: 75%;
+    background-color: #ffffff;
+    border-radius: 30px;
+    top: 5%;
+    left: 12%;
+    box-shadow: -5px 5px 10px 2px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.loginForm {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    padding: 60px;
+    text-align: center;
+}
+
+.loginForm h1 {
+    color: #9E1916;
+    font-size: 40px;
+    margin-top: 10px;
+}
+
+.loginForm p {
+    margin-top: 50px;
+    font-size: 18px;
+}
+
+.socialIcons a {
+    text-decoration: none;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid #9E1916;
+    padding: 14px;
+    display: inline-block;
+    margin: 24px 20px;
+}
+
+.loginForm .other {
+    margin-top: 20px;
+}
+
+.loginForm input {
+    display: block;
+    width: 67%;
+    outline: none;
+    border: none;
+    padding: 20px 20px 20px 24px;
+    background-color: #EFEFEF;
+    margin: 37px auto 0px;
+    font-size: 16px;
+}
+
+.loginForm .forgot {
+    text-decoration: none;
+    margin-top: 30px;
+    display: block;
+    color: #9E1916;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.loginForm button {
+    padding: 10px 32px;
+    font-size: 18px;
+    color: #ffffff;
+    background-color: #9E1916;
+    margin-top: 50px;
+    border-radius: 20px;
+    border: none;
+}
+
+.socialIcons i {
+    font-size: 26px;
+    color: #9E1916;
+}
+
+.imgBack {
+    position: absolute;
+    background-image: url(./log.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right;
+    border-radius: 50%;
+    width: 900px;
+    height: 900px;
+    left: 50%;
+    top: -3%;
+}

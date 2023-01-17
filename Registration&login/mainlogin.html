@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./font/caviarfont.css">
+    <link rel="stylesheet" href="./mainlogin.css">
+    </head>
+
+<body>
+    <div class="loginBox">
+        <div class="loginForm">
+            <h1>Login</h1>
+            <p>Create your Account Using</p>
+            <div class="socialIcons">
+                <a href="#">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+                <a href="#">
+                    <i class="fa-brands fa-google"></i>
+                </a>
+            </div>
+            <p class="other">or Use Your Account</p>
+            <form action="">
+                <input type="text" name="userId" id="Id" placeholder="User Id">
+                <input type="password" name="password" id="pass" placeholder="Password">
+                <a href="#" class="forgot">forgot your password?</a>
+                <button type="button" onclick="LoginData()">Login</button>
+            </form>
+        </div>
+        <div class="imgBack">
+        </div>
+    </div>
+</body>
+<script>
+    function LoginData(){
+        let lid = document.getElementById("Id").value;
+        let lpass = document.getElementById("pass").value;
+        let localData = JSON.parse(localStorage.getItem("user"))
+        let check = false;
+        localData.map((value ,index)=>{
+        if(value.userId == lid && value.password == lpass){
+            check = true;
+        }
+    })
+    if(check == true){
+        alert("loginSuccessfull");
+        window.location.href = "home.html"
+    }else{
+        alert("404");
+    }
+    }
+</script>
+</html>

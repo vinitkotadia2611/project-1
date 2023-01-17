@@ -1,0 +1,10 @@
+@font-face {
+    font-family: 'CaviarDreams';
+    src: url(./fonts/CaviarDreams.ttf);
+    font-weight: normal;
+}
+@font-face {
+    font-family: 'CaviarDreams';
+    src: url(./fonts/CaviarDreams_Bold.ttf);
+    font-weight: 600;
+}

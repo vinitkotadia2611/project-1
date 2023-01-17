@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./home.css">
+
+</head>
+
+<body>
+    <div id="listPro">
+
+    </div>
+
+</body>
+<script>
+    function listProducts() {
+        let localdata = JSON.parse(localStorage.getItem("products"));
+        let list = "";
+        localdata.map((d, i) => {
+            list += "<div class='img'>";
+            list += " <img class='hover' width='200px' height='175px' src='./images/" + d.Image + "'>";
+
+            list += " <P> Name : " + d.Name + "<br> Available Quantity : " + d.PriceQuantity + "<br> Price : " + d.Price + "</P > ";
+            list += "<button id='btn' onclick='cart("+d.id+")'>Add To Cart</button>";
+            list += "<button class='Buy'>Buy</button>";
+            list += "</div>";
+
+        })
+        document.getElementById("listPro").innerHTML = list;
+    }
+    window.onload = listProducts();
+    function cart(id){
+        localdata = JSON.parse(localStorage.getItem("cart"));
+        if(localdata != null){
+            localdata.push(id);
+            localStorage.setItem("cart" , JSON.stringify(localdata));
+        }else{
+            localStorage.setItem("cart" , JSON.stringify([id]));
+        }
+    }
+
+</script>
+</html>
