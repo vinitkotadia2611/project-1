@@ -21,7 +21,7 @@ function dataLoad() {
         row += "</td>";
         row += "<td>" + d.Price;
         row += "</td>";
-        row += "<td>" + d.PriceQuantity;
+        row += "<td>" + d.Quantity;
         row += "</td>";
         row += "<td><img src='./images/" + d.Image + "'width = '100px' height='100px'>";
         row += "</td>";
@@ -43,7 +43,7 @@ function submit1() {
         id: pi,
         Name: pn,
         Price: pp,
-        PriceQuantity: pq,
+        Quantity: pq,
         Image: img
     }
 
@@ -73,7 +73,7 @@ function editData(id) {
             document.getElementById("id").value = d.id;
             document.getElementById("productName").value = d.Name;
             document.getElementById("productPrice").value = d.Price;
-            document.getElementById("productQuantity").value = d.PriceQuantity;
+            document.getElementById("productQuantity").value = d.Quantity;
             document.getElementById("img1").value = d.Image;
         }
     })
@@ -93,7 +93,7 @@ function update() {
         if (d.id == upi) {
             d.Name = upn;
             d.Price = upp;
-            d.PriceQuantity = upq;
+            d.Quantity = upq;
             d.Image = img;
         }
 

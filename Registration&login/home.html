@@ -24,8 +24,8 @@
             list += "<div class='img'>";
             list += " <img class='hover' width='200px' height='175px' src='./images/" + d.Image + "'>";
 
-            list += " <P> Name : " + d.Name + "<br> Available Quantity : " + d.PriceQuantity + "<br> Price : " + d.Price + "</P > ";
-            list += "<button id='btn' onclick='cart("+d.id+")'>Add To Cart</button>";
+            list += " <P> Name : " + d.Name + "<br> Available Quantity : " + d.Quantity + "<br> Price : " + d.Price + "</P > ";
+            list += "<button id='btn' onclick='cart(" + d.id + ")'>Add To Cart</button>";
             list += "<button class='Buy'>Buy</button>";
             list += "</div>";
 
@@ -33,15 +33,54 @@
         document.getElementById("listPro").innerHTML = list;
     }
     window.onload = listProducts();
-    function cart(id){
-        localdata = JSON.parse(localStorage.getItem("cart"));
-        if(localdata != null){
-            localdata.push(id);
-            localStorage.setItem("cart" , JSON.stringify(localdata));
-        }else{
-            localStorage.setItem("cart" , JSON.stringify([id]));
-        }
+    function cart(fid) {
+        let localdata = JSON.parse(localStorage.getItem("products"));
+        localdata.map((d, i) => {
+            if (d.id == fid) {
+                if (d.Quantity > 0) {
+                    d.Quantity -= 1;
+                    // console.log(d.Quantity);
+
+                    let localcart = JSON.parse(localStorage.getItem("cart"));
+                    let obj = {
+                        id: d.id,
+                        que: 1,
+                    }
+                    if (localcart !== null) {
+                        let flag = 0;
+                        for (let i in localcart) {
+                            if (fid == localcart[i].id) {
+                                localcart[i].que += 1;
+                                flag = 1;
+                            }
+                        }
+                            if(flag == 0){
+                                localcart.push(obj);
+                                localStorage.setItem("cart", JSON.stringify(localcart));
+                            }else{
+                                localStorage.setItem("cart", JSON.stringify(localcart));
+                            }
+                    } else {
+                        localStorage.setItem("cart", JSON.stringify([obj]))
+                    }
+                } else {
+                    alert('crash');
+                }
+            } else {
+
+            }
+        })
+        localStorage.setItem("products", JSON.stringify(localdata));
+        listProducts()
+        // if(localdata != null){
+        //     localdata.push(id);
+        //     localStorage.setItem("cart" , JSON.stringify(localdata));
+        //     window.location.href = "cart.html";
+        // }else{
+        //     localStorage.setItem("cart" , JSON.stringify([id]));
+        // }
     }
 
 </script>
+
 </html>
